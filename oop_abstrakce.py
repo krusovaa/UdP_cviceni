@@ -23,8 +23,9 @@ class AGO(ABC):
     def color(self, color_):
         self.__color = color_
 
+    @abstractmethod
     def print(self):  # preddefinovana metody print
-        print(self.__level, self.__color)
+        pass
 
 
 class Point(AGO):
@@ -44,7 +45,40 @@ class Point(AGO):
         print(self.__pointID, self.__x, self.__y, self.__z)
 
 
-go = AGO(1, 1)
-go.print()
-g = Point(0, 0, 10, 10, 10)
-g.print()
+class Ellipse:
+
+    def __init__(self, a_=0, b_=0):
+        self.__a = a_
+        self.__b = b_
+
+    def print(self):
+        print(self.__a, self.__b)
+
+    def change(self, a_, b_):
+        self.__a = a_
+        self.__b = b_
+
+
+class Circle(Ellipse):
+
+    def __init__(self, r_):
+        super().__init__(r_, r_)
+
+    def change(self, a_, b_):
+        if a_ == b_:
+            super().change(a_, b_)
+        else:
+            print('Error')
+
+
+e = Ellipse(10, 5)
+e.change(45, 12)
+e.print()
+
+c = Circle(8)
+c.change(7, 7)
+c.print()
+
+
+# g = Point(0, 0, 10, 10, 10)
+# g.print()
