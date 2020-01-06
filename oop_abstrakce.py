@@ -1,4 +1,7 @@
-class GO:
+from abc import ABC, abstractmethod
+
+
+class AGO(ABC):
 
     def __init__(self, level_=0, color_=0):
         self.__level = level_
@@ -24,7 +27,7 @@ class GO:
         print(self.__level, self.__color)
 
 
-class Point(GO):
+class Point(AGO):
 
     counter = 0
 
@@ -41,5 +44,7 @@ class Point(GO):
         print(self.__pointID, self.__x, self.__y, self.__z)
 
 
+go = AGO(1, 1)
+go.print()
 g = Point(0, 0, 10, 10, 10)
 g.print()
