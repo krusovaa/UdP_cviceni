@@ -44,6 +44,9 @@ class Point(AGO):
         super().print()
         print(self.__pointID, self.__x, self.__y, self.__z)
 
+    def __lt__(self, other):
+        return self.__x < other.__x
+
 
 class Ellipse:
 
@@ -80,5 +83,6 @@ c.change(7, 7)
 c.print()
 
 
-# g = Point(0, 0, 10, 10, 10)
-# g.print()
+p = Point(0, 0, 10, 10, 10)
+q = Point(0, 0, 20, 10, 10)
+print(p<q)
