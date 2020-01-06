@@ -20,11 +20,10 @@ print("Počet zastávek v pásmu P je: ", n)
 #    json.dump(data, f)
 
 
-
 filtered_stops = []
 for feat in data['features']:
     a = feat['properties']['ZAST_PASMO']
-    if a == 'P':
+    if a == 'P':p
         filtered_stops.append(feat)
 with open("zastavky.json", "w", encoding="utf-8") as f:
     json.dump(filtered_stops, f, indent=2, ensure_ascii=False)  # indent, ensure_ascii pro lepsi cteni
