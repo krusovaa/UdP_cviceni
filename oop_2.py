@@ -8,9 +8,7 @@ class Point:
         Point.__cnt = Point.__cnt + 1
 
     def print(self):
-        print("id = " + str(self.__id))
-        print("x = " + str(self.__x))
-        print("y = " + str(self.__y))
+        print("id = " + str(self.__id) + ", x = " + str(self.__x) + ", y = " + str(self.__y))
         # print(str(self.__id) + " " + str(self.__x) + " " + str(self.__y))
 
     def getX(self):
@@ -68,6 +66,31 @@ class Polygon:
         for p in self.__points:
             p.print()
 
+class GO: #graficky objekt
+
+    def __init__(self, color_, width_):
+        self.__color = color_
+        self.__width = width_
+
+    def print(self):
+        print('GO: col = ' + str(self.__color) + ', width = ' + str(self.__width))
+
+
+class Point2(GO):
+
+    def __init__(self, color_, width_, x_, y_):
+        super().__init__(color_, width_)
+        self.__x = x_
+        self.__y = y_
+
+    def print2(self):
+        super.print()
+        print('x = ' + str(self.__x) + 'y = ' + str(self.__y))
+
+go = GO(0, 1)
+go.print()
+p = Point2(1, 5, 15, 15)
+p.print2()
 
 a = Point(0, 0)
 b = Point(10, 10)
