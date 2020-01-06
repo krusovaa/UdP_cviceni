@@ -14,7 +14,7 @@ def kd_tree(points, axis):
 
     # sort points according to axis
     if axis == 'x':
-        points.sort(key=lambda p: p[0])  # x axis, prvni clen ntice = x, pred dvojteckou je seznam par., za veci, ktery vraci
+        points.sort(key=lambda p: p[0])  # x axis, prvni clen ntice = x, pred dvojteckou je seznam parametru, za veci, ktery vraci
     if axis == 'y':
         points.sort(key=lambda p: p[1])  # y axis, druhy clen ntice = y
 
